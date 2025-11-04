@@ -1,9 +1,9 @@
 import Image from "next/image"
-import LiquidEther from "../components/LiquidEther/LiquidEther.js"
+
+import Separator from "@/components/ui/Separator"
 
 export default function Home() {
   return (
-
     <section className="mx-auto w-4/5 min-h-screen flex flex-col items-center justify-center font-mono">
       {/* <div className="absolute  w-full h-120 sm:h-150 rounded-2xl mx-auto">
         <LiquidEther
@@ -25,7 +25,7 @@ export default function Home() {
         />
       </div> */}
       <div className="flex flex-col items-center justify-center mt-20">
-        <h1 className="text-black text-4xl">A dialogue with nature</h1>
+        <h1 className="text-black text-6xl">Ikebana</h1>
         <p className="text-black font-sans text-m">
           The traditional Japanese art of flower arrangement, Ikebana, goes
           beyond simple aesthetics— <br />
@@ -40,8 +40,7 @@ export default function Home() {
         "
         />
       </div>
-      
+      <Separator number="01" label="[about]" />
     </section>
-
   )
 }
