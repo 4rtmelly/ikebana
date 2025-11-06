@@ -98,6 +98,16 @@ export default function Home() {
           </div>
         )}
       </section>
+      {/* contact */}
+      <section className="mx-auto w-4/5 flex flex-col items-center justify-center font-sans">
+        <Separator number="03" label="[contact]" />
+        <div className="flex flex-col items-center justify-center font-sans">
+          <h2 className="text-black font-bold font-sans text-4xl">
+            {" "}
+            any question or request ? contact me !
+          </h2>
+        </div>
+      </section>
     </>
   )
 }
