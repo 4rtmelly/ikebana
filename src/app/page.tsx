@@ -1,10 +1,13 @@
+"use client"
+import { useEffect } from "react"
 import Image from "next/image"
-
 import Separator from "@/components/ui/Separator"
 import ItemCard from "@/components/ui/ItemCard"
-
+import useIsMobile from "@/helper/isMobile"
+import Carousel from "@/components/ui/Carousel/Carousel"
 export default function Home() {
   const items = [1, 2, 3, 4]
+  const isMobile = useIsMobile()
   return (
     <>
       <section className="mx-auto w-4/5 min-h-screen flex flex-col items-center justify-center font-mono">
@@ -73,16 +76,27 @@ export default function Home() {
       {/* services */}
       <section className="mx-auto w-4/5 flex flex-col items-center justify-center font-sans">
         <Separator number="02" label="[services]" />
-        <div className="flex flex-row mt-10 items-center justify-center">
-          {items.map((item, index) => (
-            <ItemCard
-              key={index}
-              service="Hako"
-              img="/images/shop1.jpg"
-              textDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utco laboris "
-            />
-          ))}
-        </div>
+        {isMobile ? (
+          <Carousel
+            baseWidth={300}
+            autoplay={true}
+            autoplayDelay={3000}
+            pauseOnHover={true}
+            loop={true}
+            round={false}
+          />
+        ) : (
+          <div className="flex flex-row mt-10 items-center justify-center">
+            {items.map((item, index) => (
+              <ItemCard
+                key={index}
+                service="Hako"
+                img="/images/shop1.jpg"
+                textDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utco laboris "
+              />
+            ))}
+          </div>
+        )}
       </section>
     </>
   )

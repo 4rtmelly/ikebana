@@ -7,7 +7,7 @@ export default function ItemCard({
 }) {
   return (
     <>
-      <div className="flex flex-col items-center jusitfy-center font-sans">
+      <div className="mx-2 flex flex-col items-center jusitfy-center font-sans">
         <Image
           className="rounded-lg"
           src={img}
@@ -16,7 +16,7 @@ export default function ItemCard({
           alt="ikebana services"
         />
         <h3 className="text-black text-lg"> {service} </h3>
-        <p className="text-black text-base"> {textDescription} </p>
+        <p className="text-black text-base p-3"> {textDescription} </p>
       </div>
     </>
   )
